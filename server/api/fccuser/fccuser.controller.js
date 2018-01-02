@@ -278,8 +278,8 @@ var loadNextChunk = function(skip, limit) {
   var opts = {
     host: 'api.gitter.im',
     method: 'GET',
-    path: '/v1/rooms/546fd572db8155e6700d6eaf/users?access_token=7ad0f9a65347ce116fb5dec4c33f798e316500d0'+
-    '&limit='+limit+'&skip='+skip  
+    path: '/v1/rooms/55939e8615522ed4b3e3272a/users?access_token=3fb774424113d3033acbd7a02f209cce6749d219'+
+    '&limit='+limit+'&skip='+skip
   };
 
   console.log("Loading next chunk of "+limit+" users after skipping " + skip);
@@ -407,7 +407,7 @@ var doVerify = function(crit) {
         }
         fccusers.forEach( function(fccusr) {
 
-            var baseUrl = 'http://www.freecodecamp.com/'+fccusr.username;
+            var baseUrl = 'http://www.freecodecamp.cn/'+fccusr.username;
 
             // First we'll check to make sure no errors occurred when making the request
             var json = { username : fccusr.username, 
@@ -439,7 +439,7 @@ var doVerify = function(crit) {
                 }
 
                  // Forwarded to the FCC Map page with this title ???
-                if (!html || !json.username || html.toLowerCase().indexOf("<title>camper "+json.username.toLowerCase()) < 0) {
+                if (!html || !json.username || html.toLowerCase().indexOf("<title> camper "+json.username.toLowerCase()) < 0) {
                    json.existing = false;
                    error = "404: Not found";
                    console.log(json.username + ' error:'+error);
