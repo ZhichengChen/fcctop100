@@ -1,6 +1,6 @@
 
 <header class="header">
-    <a href="http://www.freecodecamp.com"><img class="fcclogo" src="https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg" alt="FreeCodeCamp logo"></a><div class="right greeting" ng-show="isLoggedIn()">Hello {{me.username}}</div><div class="right" ng-hide="isLoggedIn()"><button ng-click="authenticate('github')" class="btn btn-lg btn-block btn-github btn-social"><i class="fa fa-github"></i>使用Github登录</button></div>
+    <a href="http://www.freecodecamp.com"><img class="fcclogo" src="https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg" alt="FreeCodeCamp logo"></a><div class="right greeting" ng-show="isLoggedIn()">你好 {{me.username}}</div><div class="right" ng-hide="isLoggedIn()"><button ng-click="authenticate('github')" class="btn btn-lg btn-block btn-github btn-social"><i class="fa fa-github"></i>使用Github登录</button></div>
 </header>
 
 <div class="container">
@@ -15,12 +15,12 @@
       	</th>
         </tr>
         <tr class="top100" ng-show="isLoggedIn()">
-          <td colspan="9">You're following:&nbsp;&nbsp;<span ng-repeat="follow in me.followimg"><img ng-src="{{follow}}" class="userimg"/></span><button class="btn rank-btn" ng-click="getDataFollowing()" ng-hide="showingFollowing">Show Following</button><button class="btn rank-btn" ng-click="getDataRecent()" ng-show="showingFollowing">Show Top 100</button>
+          <td colspan="9">正在关注:&nbsp;&nbsp;<span ng-repeat="follow in me.followimg"><img ng-src="{{follow}}" class="userimg"/></span><button class="btn rank-btn" ng-click="getDataFollowing()" ng-hide="showingFollowing">只显示关注的人</button><button class="btn rank-btn" ng-click="getDataRecent()" ng-show="showingFollowing">显示前100</button>
           </td>
         </tr>
         <tr class="top100">
           <td colspan="9">
-          <div class="single"><span>找不到你？直接在这里输入你的昵称 </span> <input type="text" placeholder="昵称" ng-model="username" ng-keypress="handleEnter($event)"> <button class="btn rank-btn" ng-click="getUserRanking()">获取排名</button> <button ng-show="isLoggedIn()" ng-click="followUser('input')" class="btn rank-btn">Follow</button></div>
+          <div class="single"><span>找不到你？直接在这里输入你的昵称 </span> <input type="text" placeholder="昵称" ng-model="username" ng-keypress="handleEnter($event)"> <button class="btn rank-btn" ng-click="getUserRanking()">获取排名</button> <button ng-show="isLoggedIn()" ng-click="followUser('input')" class="btn rank-btn">关注</button></div>
           </td>
         </tr>
         <tr ng-show="notFound" class="top100">
@@ -132,6 +132,10 @@
 
 <footer class="footer">
   <div class="container">
-      <p>*** By <a href="http://www.freecodecamp.com/roelver">@roelver</a> ***</p>
+      <p>
+        *** By <a href="http://www.freecodecamp.com/roelver">@roelver</a> ***
+        <br>
+        *** 中文翻译 <a href="http://www.freecodecamp.cn/ZhichengChen">@ZhichengChen</a> ***
+      </p>
   </div>
 </footer>
