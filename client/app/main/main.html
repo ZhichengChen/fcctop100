@@ -103,7 +103,7 @@
         </tr>
         <tr class="top100" ng-repeat="camper in campers | orderBy:predicate:reverse | limitTo:100">
           <td>{{$index+1}}</td>
-          <td><a href="http://www.freecodecamp.com/{{camper.username}}" target="_blank"><img ng-src="{{camper.img}}" class="userimg"/>
+          <td><a href="http://www.freecodecamp.cn/{{camper.username}}" target="_blank"><img ng-src="{{camper.img}}" class="userimg"/>
           <span class="user-name">{{camper.username}}</span></a></td>
           <td class="count"><span ng-show="onRecentPage">{{camper.totalRecent}}</span><span ng-hide="onRecentPage">{{camper.total}}</span></td>
           <td class="count"><span ng-show="onRecentPage">{{camper.pointsRecent}}</span><span ng-hide="onRecentPage">{{camper.points}}</span></td>

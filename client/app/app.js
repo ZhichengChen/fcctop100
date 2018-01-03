@@ -11,7 +11,7 @@ angular.module('fccuserlistApp', [
  
   .config(function($authProvider) {
     $authProvider.github({
-      clientId: '0e47c26bffd2418936fb',
+      clientId: 'b2da8f8ad85b9c87a136',
       url: '/auth/github',
       authorizationEndpoint: 'https://github.com/login/oauth/authorize',
       redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
